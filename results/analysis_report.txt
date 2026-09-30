@@ -1,0 +1,151 @@
+========================================
+        SORTLAB EXPERIMENTAL REPORT     
+========================================
+
+Benchmark configuration
+----------------------------------------
+Data type              : Integer
+Dataset sizes          : 1000, 10000, 50000, 100000, 250000, 500000
+Distributions          : Random, Sorted, Reverse Sorted, Nearly Sorted, Duplicates
+Benchmark runs         : 5
+Quadratic limit        : 100000 elements
+Efficient algorithm limit: 500000 elements
+Metrics                : Execution time, comparisons, movements, validation
+
+========================================
+        GLOBAL BENCHMARK SUMMARY        
+========================================
+Total experiments : 150
+Successful        : 150
+Failed            : 0
+Average time      : 4.358941 seconds
+
+========================================
+        GLOBAL PERFORMANCE EXTREMES     
+========================================
+
+Fastest experiment
+----------------------------------------
+Algorithm    : Bubble Sort
+Size         : 1000
+Distribution : Sorted
+Time         : 0.000012 seconds
+
+Slowest experiment
+----------------------------------------
+Algorithm    : Bubble Sort
+Size         : 100000
+Distribution : Random
+Time         : 85.654715 seconds
+
+========================================
+       DISTRIBUTION ANALYSIS            
+========================================
+
+Dataset size: 100000
+
+Distribution       Fastest Algorithm  Time
+--------------------------------------------------------
+Random             Quick Sort         0.033668 s
+Sorted             Bubble Sort        0.000727 s
+Reverse Sorted     Quick Sort         0.013267 s
+Nearly Sorted      Quick Sort         0.013892 s
+Duplicates         Quick Sort         0.026844 s
+
+========================================
+          ALGORITHM STATISTICS          
+========================================
+
+Bubble Sort
+----------------------------------------
+Experiments         : 20
+Average time        : 16.603177 s
+Average comparisons : 1132556557
+Average movements   : 616182867
+
+Selection Sort
+----------------------------------------
+Experiments         : 20
+Average time        : 10.204582 s
+Average comparisons : 1575104875
+Average movements   : 19395
+
+Insertion Sort
+----------------------------------------
+Experiments         : 20
+Average time        : 5.582089 s
+Average comparisons : 615516806
+Average movements   : 615484609
+
+Merge Sort
+----------------------------------------
+Experiments         : 30
+Average time        : 0.060515 s
+Average comparisons : 1861296
+Average movements   : 5520184
+
+Quick Sort
+----------------------------------------
+Experiments         : 30
+Average time        : 0.032541 s
+Average comparisons : 3043906
+Average movements   : 452078
+
+Heap Sort
+----------------------------------------
+Experiments         : 30
+Average time        : 0.108414 s
+Average comparisons : 4984948
+Average movements   : 2588228
+
+========================================
+       DATASET SIZE ANALYSIS - RANDOM   
+========================================
+
+Size               Bubble Sort    Selection Sort    Insertion Sort        Merge Sort        Quick Sort         Heap Sort
+----------------------------------------------------------------------------------------------------------------
+1000                  0.006714          0.003370          0.002292          0.000311          0.000256          0.000439
+10000                 0.723141          0.320504          0.223117          0.004141          0.003196          0.006007
+50000                20.652579          8.202766          5.600078          0.022993          0.016692          0.034897
+100000               85.654715         32.037743         22.591899          0.047499          0.033668          0.073616
+250000                     N/A               N/A               N/A          0.125524          0.086993          0.197889
+500000                     N/A               N/A               N/A          0.261782          0.180038          0.415763
+
+Execution time is measured in seconds.
+Distribution used: Random.
+
+========================================
+          SCALING ANALYSIS              
+========================================
+
+Growth of execution time with dataset size
+Distribution: Random
+
+Algorithm                 1000       10000       50000      100000      250000      500000
+--------------------------------------------------------------------------------
+Bubble Sort             0.0067      0.7231     20.6526     85.6547         N/A         N/A
+Selection Sort          0.0034      0.3205      8.2028     32.0377         N/A         N/A
+Insertion Sort          0.0023      0.2231      5.6001     22.5919         N/A         N/A
+Merge Sort              0.0003      0.0041      0.0230      0.0475      0.1255      0.2618
+Quick Sort              0.0003      0.0032      0.0167      0.0337      0.0870      0.1800
+Heap Sort               0.0004      0.0060      0.0349      0.0736      0.1979      0.4158
+
+========================================
+          COMPLEXITY GROUPS              
+========================================
+
+Quadratic Algorithms - O(n^2)
+----------------------------------------
+Bubble Sort
+Selection Sort
+Insertion Sort
+
+Efficient Algorithms - O(n log n)
+----------------------------------------
+Merge Sort
+Quick Sort
+Heap Sort
+
+========================================
+          REPORT COMPLETED              
+========================================
